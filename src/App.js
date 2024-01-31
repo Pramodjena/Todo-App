@@ -6,16 +6,18 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
 function App() {
-  // const intiialState = [
-  //   {
-  //     id: 1,
-  //     title: "Shopping",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Playing",
-  //   },
-  // ];
+  /*
+  const intiialState = [
+    {
+      id: 1,
+      title: "Shopping",
+    },
+    {
+      id: 2,
+      title: "Playing",
+    },
+  ];
+  */
   const [todos, setTodos] = useState(
     () => JSON.parse(localStorage.getItem("todos")) || []
   );
@@ -50,7 +52,12 @@ function App() {
       >
         Todo Application
       </Heading>
-      <TodoList todos={todos} deleteTodos={deleteTodos} addTodo={addTodo} setTodos={setTodos}/>
+      <TodoList
+        todos={todos}
+        deleteTodos={deleteTodos}
+        addTodo={addTodo}
+        setTodos={setTodos}
+      />
       <AddTodo addTodo={addTodo} />
     </VStack>
   );
